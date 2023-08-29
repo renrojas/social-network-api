@@ -16,9 +16,8 @@ const userSchema = new Schema(
         },
     },
     {
-        toJSON: {
-            getters: true,
-        },
+     versionKey: false,
+     timestamps: true,
     }
 );
 
