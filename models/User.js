@@ -15,9 +15,15 @@ const userSchema = new Schema(
             match: /.+\@.+\..+/,
         },
     },
+    // {
+    //  versionKey: false,
+    // }
     {
-     versionKey: false,
-    }
+        toJSON: {
+          virtuals: true,
+        },
+        id: false,
+      }
 );
 
 const User = model('user', userSchema);
