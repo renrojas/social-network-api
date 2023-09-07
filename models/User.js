@@ -14,6 +14,13 @@ const userSchema = new Schema(
             unique: true,
             match: /.+\@.+\..+/,
         },
+        thought: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            },
+
+        ],
     },
     // {
     //  versionKey: false,
