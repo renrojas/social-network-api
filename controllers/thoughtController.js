@@ -3,6 +3,7 @@ const {Thought, User} = require('../models');
 module.exports = {
     //create Thought
     async createThought(req, res) {
+        console.log(req.body)
         try {
           const thought = await Thought.create(req.body);
         
@@ -48,4 +49,22 @@ module.exports = {
           res.status(500).json(err);
         }
       },
+      //update a thought
+      async updateThought(req, res) {
+        try {
+            const thought = await Thought.findOneAndUpdate(
+                { _id: req.params.thoughtID },
+                { $set: req.body },
+                { runValidators: true, new: true }
+            );
+
+            if (!thought) {
+                res.status(404).json({ message: 'No thought with this id!'});
+            }
+
+            res.json(thought);
+        } catch (err) {
+            res.status(500).json(err);
+        }
+      }
 }

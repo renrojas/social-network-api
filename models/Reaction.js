@@ -26,9 +26,13 @@ const reactionSchema = new Schema(
         },        
     },
     {
-        versionKey: false,
+        toJSON: {
+            getters: true
+          },
+          id: false
     }
 );
+
 
 
 module.exports = reactionSchema;
