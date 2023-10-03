@@ -8,7 +8,7 @@ This back end social network API was created using NoSQL, where users can share 
 ## Installation
 Clone the project Repository: https://github.com/renrojas/social-network-api
 
-Then follow the video walkthrough to load the database and launch the application: 
+Then follow the video walkthrough to load the database and launch the application: https://youtu.be/NoDksd6aphA
 
 ## Usage
 To navigate this application, you will start by invoking it by using the following command: node server. 
